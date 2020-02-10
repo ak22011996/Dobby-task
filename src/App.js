@@ -169,13 +169,13 @@ export default class App extends React.Component {
 	
 	render() {
 		 return (
-			<div>
+			<div id="butt">
 				<div id="registerDiv">
 					<h1>Sign Up Here</h1>
 					Name : <input  type="text" id="nameInput" placeholder="Enter your Name "required />
 					Email : <input id="emailInput" type="email" placeholder="Enter your email"required />
 					Password : <input id="passInput" type="Password" placeholder="Enter your Password"required /><hr/>
-					<button id="saveButton" onClick={()=>this.saveRegistrationDetail()}>Sign Up</button>
+					<button onClick={()=>this.saveRegistrationDetail()}>Sign Up</button>
 					<button onClick={()=>this.handlePageChange()}>Sign In</button>
 				</div>
 				<div id="loginDiv" style={{display: 'none'}}>
