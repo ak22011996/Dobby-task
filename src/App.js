@@ -143,7 +143,7 @@ export default class App extends React.Component {
 		displayData : filteredArray
 			});
 		alert("DeleteUser");
-                }
+          }
 	validateFormData = function(){
 		var name = document.getElementById('nameInput');
 		var email = document.getElementById('emailInput');
