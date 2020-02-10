@@ -162,7 +162,7 @@ export default class App extends React.Component {
 		 return (
 			<div>
 				<div id="registerDiv">
-					<h1>Register Yourself For Learning</h1>
+					<h1>Register Yourself</h1>
 					Name : <input  type="text" id="nameInput" placeholder="Enter your Name "required />
 					Email : <input id="emailInput" type="email" placeholder="Enter your email"required />
 					Password : <input id="passInput" type="Password" placeholder="Enter your Password"required /><br/><hr/>
