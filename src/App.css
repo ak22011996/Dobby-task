@@ -6,20 +6,25 @@
   text-decoration: none;
   font-size: 18px;
   color: black;
-  display: block
+  display: block;
+  width:250;
 }
 .search button{
 color:blue;
 float:right;
+
 }
 #searchEngine input{
 height:60px;
-width: 200px;
+width: 324px;
 margin-top: 20px;
+}
+.deleteButton{
+	
 }
 .search{
 Color:red;
-width:176px;
+width:300px;
 }
 #registerDiv {
 	font-size:20px;

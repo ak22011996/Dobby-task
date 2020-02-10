@@ -15,9 +15,10 @@ export default class App extends React.Component {
 	}
 
 	saveRegistrationDetail = function() {
-		console.log(document.getElementById('nameInput').value);
-		console.log(document.getElementById('emailInput').value);
-		console.log(document.getElementById('passInput').value);
+		if(!this.validateFormData()){
+			alert(" Fill all user detail");
+			return;
+		}
 		
 		fetch('http://localhost:3000/saveRegistrationDetail', {
 		  method: 'POST',
@@ -42,13 +43,10 @@ export default class App extends React.Component {
 	}
 	handlePageChange = function(){
 		document.getElementById('registerDiv').style.display='none';
-		//document.getElementById('dashboard').style.display='none';
+		document.getElementById('searchEngine').style.display='none';
 		document.getElementById('loginDiv').style.display='block';
 	}
 	handleLoginPage = function (){
-		document.getElementById('registerDiv').style.display='none';
-		document.getElementById('loginDiv').style.display='none';
-		document.getElementById('searchEngine').style.display='block';
 		fetch('http://localhost:3000/handleLoginPage', {
 		  method: 'POST',
 		   headers: {
@@ -144,7 +142,16 @@ export default class App extends React.Component {
 		console.log("userName "+ userName);*/
 		
 	}
-	
+	validateFormData = function(){
+		var name = document.getElementById('nameInput');
+		var email = document.getElementById('emailInput');
+		var pass = document.getElementById('passInput');
+		if(name.value=="" || email.value=="" || pass.value==""){
+			return false;
+		} else {
+			return true;
+		}
+	}
 	refreshPage = function() {
 	  window.location.reload();
 	}

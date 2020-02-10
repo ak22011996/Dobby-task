@@ -40,7 +40,7 @@ const server = http.createServer((req, res) => {
 			var resValues = JSON.parse(body);
 			var sql = "SELECT * from  dobbytable WHERE email="+"'"+resValues.username+"'"
 			+" AND password = "+"'"+resValues.userpass+"'";
-			
+			console.log(sql);
 			con.query(sql, function (err, result) {
 				console.log("No of Record: "+result.length);
 				res.statusCode = 200;
@@ -50,7 +50,7 @@ const server = http.createServer((req, res) => {
 				res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');*/
 				if (err){
 					res.end(JSON.stringify({response:'Logged In Failed!'}));
-					throw err;
+					
 				}
 				if(result.length>0){
 					res.end(JSON.stringify({response:'success'}));
