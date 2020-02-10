@@ -25,9 +25,6 @@ export default class App extends React.Component {
 		  headers: {
 			'Accept': 'application/json',
 			'Content-Type': 'application/json',
-		/*	'Access-Control-Allow-Origin': '*',
-			'Access-Control-Allow-Methods': 'POST',
-			'Access-Control-Allow-Headers': 'Content-Type, Authorization'*/
 		  },
 		  body: JSON.stringify({
 			name: document.getElementById('nameInput').value,
@@ -67,7 +64,6 @@ export default class App extends React.Component {
 		})
 		.then(res => res.json())
 		.then(res => {
-			//this.refreshPage();
 			if(res.response=='success'){
 				document.getElementById('registerDiv').style.display='none';
 				document.getElementById('loginDiv').style.display='none';

@@ -22,7 +22,6 @@ const server = http.createServer((req, res) => {
 			con.query(sql, function (err, result) {
 				res.statusCode = 200;
 				res.setHeader('Content-Type', 'application/json');
-				//res.setHeader("Access-Control-Allow-Origin", "*");
 				if (err){
 					res.end(JSON.stringify({response:'Registered Failed'}));
 					throw err;
@@ -45,9 +44,6 @@ const server = http.createServer((req, res) => {
 				console.log("No of Record: "+result.length);
 				res.statusCode = 200;
 				res.setHeader('Content-Type', 'application/json');
-			/*	res.setHeader('Accept', 'application/json',);
-				res.setHeader('Access-Control-Allow-Methods', 'POST',);
-				res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');*/
 				if (err){
 					res.end(JSON.stringify({response:'Logged In Failed!'}));
 					
@@ -61,7 +57,6 @@ const server = http.createServer((req, res) => {
 		});
 	} else if (req.url == '/testnode') {
 		res.setHeader('Content-Type', 'application/json');
-		//res.setHeader("Access-Control-Allow-Origin", "*");
 		res.end("Hi I am active.");
 		
 	}else {
