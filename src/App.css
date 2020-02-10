@@ -12,7 +12,9 @@
 .search button{
 color:blue;
 float:right;
-
+}
+#searchEngine{
+margin-left:400px;
 }
 #searchEngine input{
 height:60px;
@@ -25,14 +27,35 @@ width:300px;
 }
 #registerDiv {
 	font-size:20px;
+	padding:5px;
 }
 #registerDiv input {
 	font-size:20px;
+    margin-right: 20px;
+	margin-bottom:20px;
+}
+#registerDiv button {
+	color:blue;
+	height:50px;
+	width: 100px;
+	font-size:20px;
+	margin-left:20px;
+	border:solid yellow;
 }
 #loginDiv{
-	font-size:20px;
+	padding:5px;
 }
-#loginDiv input {
+#loginDiv input{
 	margin-top:20px;
-	font-size:15px;
+	font-size:20px;
+	margin-bottom: 20px;
+	margin-right: 20px;	
 }
+#loginDiv button{
+	height:50px;
+	width: 100px;
+	color:blue;
+	font-size:20px;
+	margin-bottom: 20px;
+	border:solid yellow;
+}	

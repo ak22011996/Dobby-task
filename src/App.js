@@ -47,6 +47,10 @@ export default class App extends React.Component {
 		document.getElementById('loginDiv').style.display='block';
 	}
 	handleLoginPage = function (){
+		if(!this.validateFormData1()){
+			alert(" Fill all user detail");
+			return;
+		}
 		fetch('http://localhost:3000/handleLoginPage', {
 		  method: 'POST',
 		   headers: {
@@ -154,6 +158,15 @@ export default class App extends React.Component {
 			return true;
 		}
 	}
+	validateFormData1 = function(){
+		var email = document.getElementById('loginNameInput');
+		var pass = document.getElementById('loginPassInput');
+		if( email.value=="" || pass.value==""){
+			return false;
+		} else {
+			return true;
+		}
+	}
 	refreshPage = function() {
 	  window.location.reload();
 	}
@@ -162,19 +175,21 @@ export default class App extends React.Component {
 		 return (
 			<div>
 				<div id="registerDiv">
-					<h1>Register Yourself</h1>
+					<h1>Sign Up Here</h1>
 					Name : <input  type="text" id="nameInput" placeholder="Enter your Name "required />
 					Email : <input id="emailInput" type="email" placeholder="Enter your email"required />
-					Password : <input id="passInput" type="Password" placeholder="Enter your Password"required /><br/><hr/>
-					<button id="saveButton" onClick={()=>this.saveRegistrationDetail()}>Sign Up</button><br/>
+					Password : <input id="passInput" type="Password" placeholder="Enter your Password"required /><hr/>
+					<button id="saveButton" onClick={()=>this.saveRegistrationDetail()}>Sign Up</button>
 					<button onClick={()=>this.handlePageChange()}>Sign In</button>
 				</div>
 				<div id="loginDiv" style={{display: 'none'}}>
-		 			UserName : <input  type="text" id="loginNameInput" placeholder="Enter your email"required /><br/>
-					Password : <input type="Password" id="loginPassInput" placeholder="Enter your Password"required/ ><br/>
+				<h1>Sign In</h1>
+					Email : <input  type="text" id="loginNameInput" placeholder="Enter your email"required />
+					Password : <input type="Password" id="loginPassInput" placeholder="Enter your Password"required/ ><hr/>
 					<button id="loginButton" onClick={()=>this.handleLoginPage()}>Sign In</button>
 				</div>	
 				<div id="searchEngine" style={{display: 'none'}}>
+				<h1>Search Profile</h1>
 					<input type="text" onChange={this.handleChange.bind(this)} placeholder="Search here..." />
 					<div className="suggestions">
 						{this.state.displayData.map((v)=>{
