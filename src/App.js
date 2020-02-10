@@ -137,10 +137,8 @@ export default class App extends React.Component {
 	}
 	deleteUser = function(){
 		console.log("DeleteUser");
-		/*console.log(event);
-		var userName = event.target.value;
-		console.log("userName "+ userName);*/
-		
+		alert("deleted");
+				
 	}
 	validateFormData = function(){
 		var name = document.getElementById('nameInput');
