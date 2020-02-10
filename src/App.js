@@ -135,11 +135,17 @@ export default class App extends React.Component {
 		console.log(this.state.gitUsers);
 		console.log("END");
 	}
-	deleteUser = function(){
-		console.log("DeleteUser");
-		alert("deleted");
-				
-	}
+	deleteUser = function(gitUserInfo){
+
+				alert("DeleteUser");
+
+				let filteredArray = this.state.searchResult.filter(item => item !== gitUserInfo);
+
+				this.setState({searchResult: filteredArray});
+
+				console.log(this.state.searchResult);
+
+                }
 	validateFormData = function(){
 		var name = document.getElementById('nameInput');
 		var email = document.getElementById('emailInput');
@@ -166,7 +172,7 @@ export default class App extends React.Component {
 					<button onClick={()=>this.handlePageChange()}>Sign In</button>
 				</div>
 				<div id="loginDiv" style={{display: 'none'}}>
-					UserName : <input  type="text" id="loginNameInput" placeholder="Enter your email"required /><br/>
+		 			UserName : <input  type="text" id="loginNameInput" placeholder="Enter your email"required /><br/>
 					Password : <input type="Password" id="loginPassInput" placeholder="Enter your Password"required/ ><br/>
 					<button id="loginButton" onClick={()=>this.handleLoginPage()}>Sign In</button>
 				</div>	
