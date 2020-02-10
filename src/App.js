@@ -41,22 +41,21 @@ export default class App extends React.Component {
 	}
 	handlePageChange = function(){
 		document.getElementById('registerDiv').style.display='none';
-		//document.getElementById('dashboard').style.display='none';
 		document.getElementById('loginDiv').style.display='block';
 	}
 	handleLoginPage = function (){
 		document.getElementById('registerDiv').style.display='none';
 		document.getElementById('loginDiv').style.display='none';
 		document.getElementById('searchEngine').style.display='block';
-		/*fetch('http://localhost:3000/handleLoginPage', {
+		fetch('http://localhost:3000/handleLoginPage', {
 		  method: 'POST',
 		   headers: {
 			'Accept': 'application/json',
 			'Content-Type': 'application/json',*/
-		/*	'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Origin': '*',
 			'Access-Control-Allow-Methods': 'POST',
 			'Access-Control-Allow-Headers': 'Content-Type, Authorization'*/
-		/*  },
+		 },
 		  body: JSON.stringify({
 			username: document.getElementById('loginNameInput').value,
 			userpass: document.getElementById('loginPassInput').value
@@ -64,7 +63,6 @@ export default class App extends React.Component {
 		})
 		.then(res => res.json())
 		.then(res => {
-			//this.refreshPage();
 			if(res.response=='success'){
 				document.getElementById('registerDiv').style.display='none';
 				document.getElementById('loginDiv').style.display='none';
@@ -72,7 +70,7 @@ export default class App extends React.Component {
 			} else {
 				alert(res.response);
 			}
-		})*/
+		})
 	}
 	
 	handleChange = function(event){
