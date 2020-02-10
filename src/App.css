@@ -1,0 +1,36 @@
+.search {
+  border: 2px solid #DE0;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+.search button{
+color:blue;
+float:right;
+}
+#searchEngine input{
+height:60px;
+width: 200px;
+margin-top: 20px;
+}
+.search{
+Color:red;
+width:176px;
+}
+#registerDiv {
+	font-size:20px;
+}
+#registerDiv input {
+	font-size:20px;
+}
+#loginDiv{
+	font-size:20px;
+}
+#loginDiv input {
+	margin-top:20px;
+	font-size:15px;
+}
