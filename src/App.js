@@ -136,10 +136,13 @@ export default class App extends React.Component {
 		console.log("END");
 	}
 	deleteUser = function(gitUserInfo){
-		alert("DeleteUser");
 		let filteredArray = this.state.searchResult.filter(item => item !== gitUserInfo);
 		this.setState({searchResult: filteredArray});
 		console.log(this.state.searchResult);
+		this.setState({
+		displayData : filteredArray
+			});
+		alert("DeleteUser");
                 }
 	validateFormData = function(){
 		var name = document.getElementById('nameInput');
