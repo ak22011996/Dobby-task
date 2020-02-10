@@ -169,7 +169,7 @@ export default class App extends React.Component {
 					<input type="text" onChange={this.handleChange.bind(this)} placeholder="Search here..." />
 					<div className="suggestions">
 						{this.state.displayData.map(function(v){
-								return (<divclassName='search' style={{Color:'white'}}>{v.login} <button className="deleteButton" onClick={function(){ 
+								return (<div className='search' style={{Color:'white'}}>{v.login} <button className="deleteButton" onClick={function(){ 
 									
 									alert('user deleted');
 								}}>Delete</button></div>)
