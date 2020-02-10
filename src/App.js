@@ -16,7 +16,6 @@ export default class App extends React.Component {
 
 	saveRegistrationDetail = function() {
 		if(!this.validateFormData()){
-			alert(" Fill all user detail");
 			return;
 		}
 		
@@ -44,10 +43,6 @@ export default class App extends React.Component {
 		document.getElementById('loginDiv').style.display='block';
 	}
 	handleLoginPage = function (){
-		if(!this.validateFormData1()){
-			alert(" Fill all user detail");
-			return;
-		}
 		fetch('http://localhost:3000/handleLoginPage', {
 		  method: 'POST',
 		   headers: {
@@ -140,10 +135,10 @@ export default class App extends React.Component {
 		this.setState({searchResult: filteredArray});
 		console.log(this.state.searchResult);
 		this.setState({
-		displayData : filteredArray
-			});
+			displayData : filteredArray
+		});
 		alert("DeleteUser");
-          }
+    }
 	validateFormData = function(){
 		var name = document.getElementById('nameInput');
 		var email = document.getElementById('emailInput');
@@ -154,15 +149,7 @@ export default class App extends React.Component {
 			return true;
 		}
 	}
-	validateFormData1 = function(){
-		var email = document.getElementById('loginNameInput');
-		var pass = document.getElementById('loginPassInput');
-		if( email.value=="" || pass.value==""){
-			return false;
-		} else {
-			return true;
-		}
-	}
+	
 	refreshPage = function() {
 	  window.location.reload();
 	}
@@ -172,11 +159,13 @@ export default class App extends React.Component {
 			<div id="butt">
 				<div id="registerDiv">
 					<h1>Sign Up Here</h1>
-					Name : <input  type="text" id="nameInput" placeholder="Enter your Name "required />
-					Email : <input id="emailInput" type="email" placeholder="Enter your email"required />
-					Password : <input id="passInput" type="Password" placeholder="Enter your Password"required /><hr/>
-					<button onClick={()=>this.saveRegistrationDetail()}>Sign Up</button>
-					<button onClick={()=>this.handlePageChange()}>Sign In</button>
+					<form>
+						Name : <input  type="text" id="nameInput" placeholder="Enter your Name "required />
+						Email : <input id="emailInput" type="email" placeholder="Enter your email"required />
+						Password : <input id="passInput" type="Password" placeholder="Enter your Password"required /><hr/>
+						<button onClick={()=>this.saveRegistrationDetail()}>Sign Up</button>
+						<button onClick={()=>this.handlePageChange()}>Sign In</button>
+					</form>
 				</div>
 				<div id="loginDiv" style={{display: 'none'}}>
 				<h1>Sign In</h1>
